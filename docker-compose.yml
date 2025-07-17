@@ -18,7 +18,7 @@ services:
   web:
     build: .
     image: crud-simple-django-app:latest
-    container_name: Crud-simple-django-app
+    container_name: crud-simple-django-app
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
