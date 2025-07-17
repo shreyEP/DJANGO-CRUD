@@ -78,3 +78,4 @@ wheel==0.42.0
 whitenoise==6.0.0
 django-tailwind
 pillow
+mysqlclient>=2.1
