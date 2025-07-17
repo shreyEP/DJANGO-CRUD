@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: 10fr;
+    gap: 5px;
+    max-width: auto;
+    margin: 0 auto; 
+}
+
+.header,
+.row {
+    display: grid;
+    grid-template-columns: repeat(5, 2fr);
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    align-items: center;
+    text-align: center;
+}
+
+.header {
+    font-weight: bold;
+    background-color: #eaeaea;
+}
+
+.row img {
+    width: 60px;
+    height: 60px;
+    object-fit: fill;
+    border-radius: 5px;
+}
+
+button {
+    background-color: antiquewhite;
+    padding: 1em;
+    border-radius: 5px; 
+
+}

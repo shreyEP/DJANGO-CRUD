@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>App</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        <h1>Data</h1> 
+        {% if people %}
+        <div class="table">
+            <div class="header">
+                <div>Name</div>
+                <div>Age</div>
+                <div>Account Type</div>
+                <div>Photo</div> 
+                <div>Operations</div>
+            </div>
+            {% for p in people %}
+                <div class="row" style="cursor:pointer;" onclick="window.location.href='{% url 'see_dept'%}'">
+                    <div>{{ p.name }}</div>
+                    <div>{{ p.age }}</div>
+                    <div>{{ p.account_type }}</div>
+                    <div><img src="{{ p.photo.url }}" alt="img"></div> 
+                    <div>
+                        <a href="{% url 'edit_person' p.id %}"><button>Edit</button></a>
+                        <a href="{% url 'delete_person' p.id %}"><button>Delete</button></a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <a href="addClients" style="text-decoration: none;"><button style="display: flex; margin: 10px auto; ">add</button></a>
+        <a href="{% url 'see_dept'%}" style="text-decoration: none;"><button style="display: flex; margin: 10px auto; ">Departments</button></a>
+    </body>
+</html>

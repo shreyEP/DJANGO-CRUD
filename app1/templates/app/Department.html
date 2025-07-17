@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>App</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <h1>Departments</h1>
+    {% if dept %}
+      <div class="table" style="width:auto; ">
+        {% for d in dept %}
+          <div class="header"  >
+            <div>{{ d.department_name }}</div>
+          </div>
+          {% for p in people%} 
+            {% if p.department.id == d.id %}
+              <div class="row" >{{ p.name }}</div>
+            {% endif %} 
+          {% endfor %} 
+        {% endfor %}
+      </div>
+    {% endif %}
+    <a href="addDepartment" style="text-decoration: none">
+      <button style="display: flex; margin: 10px auto ; ">add Department</button>
+    </a>
+  </body>
+</html>
